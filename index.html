@@ -3,32 +3,97 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hugo Ferreira engenharia</title>
+        <title>Hugo Ferreira Engenharia</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@creativebulma/bulma-tooltip@1.2.0/dist/bulma-tooltip.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+	<style>
+	 /* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body, html {
+  height: 100%
+}
+
+.bgimg {
+  background-image: url('under-construction-pages-1-image-library-Copy.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #7F7F7F;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.bgimgmobile {
+  /* Background image */
+  background-image: url('under-construction-pages-1-image-library-Copy.jpg');
+  /* Full-screen */
+  height: 100%;
+  /* Center the background image */
+  background-position: center;
+  /* Scale and zoom in the image */
+  background-size: cover;
+  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+  position: relative;
+  /* Add a white text color to all elements inside the .bgimg container */
+  color: white;
+  /* Add a font */
+  font-family: "Courier New", Courier, monospace;
+  /* Set the font-size to 25 pixels */
+  font-size: 25px;
+}
+
+/* Position text in the top-left corner */
+.topleft {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+}
+
+/* Position text in the top-right corner */
+.topright {
+  position: absolute;
+  top: 16px;
+  right: 32px;
+}
+
+hr.hr {
+  border: 2px solid #00B400;
+  border-radius: 5px;
+}
+	</style>
+	
     </head>
     <body>
-        <section class="hero is-fullheight has-background-grey-lighter">
-  
-  <div class="hero-body">
-    <div class="container">
-      <div class="title has-text-white has-text-centered"> 
-        <figure class="image">
-  		<img src="logo.png">
-	</figure> 
-      </div>  
-      <div class="subtitle has-text-white has-text-centered">
-      	<figure class="image">
-  		<img src="underConstruction.png">
-	</figure> 
-    </div>
-  </div>
-</section>
+	
+	 <div class="bgimg is-hidden-mobile">
+	  <div class="topleft">
+		<img src="logo.png" alt="logo" style="height: 110px;">
+	  </div>
+	  <div class="topright has-text-centered">
+		<p>COMING SOON</p>
+		<hr class="hr">
+		<p id="demo" style="font-size:40px"></p>
+	  </div>
+	 </div> 
+	 
+	 <div class="bgimgmobile is-hidden-tablet">
+	  <div class="topleft">
+		<img src="logo.png" alt="logo" style="height: 80px;">
+	  </div>
+	  <div class="topright has-text-centered">
+		<h1>COMING SOON</h1>
+		<p id="demo" style="font-size:30px"></p>
+	  </div>
+	 </div>
+
+	
         <footer class="footer has-background-white-ter">
             <div class="content has-text-centered">
                 <p>
-                    <i class="far fa-copyright"></i> 2021 Marcos Mendes
+                    <i class="far fa-copyright"></i> 2021 <a href="https://marcosmendes.eu" target="_blank" style="text-decoration: none;">
+					Marcos Mendes </a>
                 </p>
 
                 <p>
@@ -43,4 +108,36 @@
         </footer>  
     </body>
     
+	<script>
+	// Set the date we're counting down to
+var countDownDate = new Date("Apr 8, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000); 
+
+</script>
+	
 </html>

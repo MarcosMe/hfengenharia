@@ -26,22 +26,14 @@ body, html {
 }
 
 .bgimgmobile {
-  /* Background image */
-  background-image: url('under-construction-pages-1-image-library-Copy.jpg');
-  /* Full-screen */
+  background-image: url('under-construction-pages-1-image-library-Mobile.jpg');
   height: 100%;
-  /* Center the background image */
   background-position: center;
-  /* Scale and zoom in the image */
-  background-size: cover;
-  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+  background-size: cover;/
   position: relative;
-  /* Add a white text color to all elements inside the .bgimg container */
-  color: white;
-  /* Add a font */
-  font-family: "Courier New", Courier, monospace;
-  /* Set the font-size to 25 pixels */
+  color: #7F7F7F;
   font-size: 25px;
+  font-weight: bold;
 }
 
 /* Position text in the top-left corner */
@@ -79,13 +71,15 @@ hr.hr {
 	 </div> 
 	 
 	 <div class="bgimgmobile is-hidden-tablet">
-	  <div class="topleft">
-		<img src="logo.png" alt="logo" style="height: 80px;">
-	  </div>
-	  <div class="topright has-text-centered">
-		<h1>COMING SOON</h1>
-		<p id="demo" style="font-size:30px"></p>
-	  </div>
+	  <div class="has-text-centered" style="padding-top: 64px;">
+		<img src="logo.png" alt="logo" style="height: 100px;">
+	  
+	  		<hr class="hr">
+	  
+	  <p>COMING SOON</p>
+
+		<p id="demoMobile" style="font-size:30px"></p>
+		</div>
 	 </div>
 
 	
@@ -130,7 +124,8 @@ var x = setInterval(function() {
   // Display the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-
+  document.getElementById("demoMobile").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
